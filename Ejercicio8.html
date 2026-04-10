@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="resultado"></p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgB272Ry5v2vArkw8aKeFHYdCENmTCifATAg&s" alt="Entreno del CB Conejero" id="foto">
+    <button id="btn">Pulsar</button>
+    <script>
+        const boton = document.getElementById("btn")
+        const img = document.getElementById("foto")
+        const resultado = document.getElementById("resultado")
+        let contador = 0
+
+        boton.addEventListener("click", function(){
+            contador++;
+            img.src = "https://picsum.photos/200/150?random=2" + contador;
+            
+        })
+
+    </script>
+</body>
+</html>

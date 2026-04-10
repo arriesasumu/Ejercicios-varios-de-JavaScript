@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Semáforo interactivo</title>
+
+  <style>
+    body{
+        padding: 50px;
+    }
+    .semaforo {
+      width: 100px;
+      background: black;
+      padding: 5%;
+      border-radius: 10px;
+      margin: 40px auto;
+      text-align: center;
+    }
+
+   
+    .luz {
+      width: 100px;
+      height: 100px;
+      margin: 10px auto;
+      border-radius: 50%;
+      background: gray; 
+    }
+  </style>
+</head>
+<body>
+
+
+
+<div class="semaforo">
+  <div id="red" class="luz"></div>
+  <div id="orange" class="luz"></div>
+  <div id="green" class="luz"></div>
+</div>
+
+<p id="resultado">Stop</p>
+
+<button onclick="cambiar()">Siguiente</button>
+
+<script>
+  
+  const estados = ["red", "orange", "green"];
+
+  
+  const textos = ["Stop", "Atención", "Adelante"];
+
+  
+  let estado = 0;
+
+  function cambiar() {
+
+    // 4. Apagar todas las luces
+    document.getElementById("red").style.background = "grey";
+    document.getElementById("orange").style.background = "grey";
+    document.getElementById("green").style.background = "grey";
+
+    
+    estado = (estado + 1) % 3;
+
+    
+    let colorActual = estados[estado];
+    document.getElementById(colorActual).style.background = colorActual;
+
+    
+    document.getElementById("resultado").innerHTML = textos[estado];
+  }
+</script>
+
+</body>
+</html>
